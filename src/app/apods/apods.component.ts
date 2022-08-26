@@ -13,14 +13,11 @@ import config from '../../../config.json' assert {type: 'json'}
 })
 export class ApodsComponent implements OnInit {
   private setCarouselPosition = new Subject<number>(); 
-  private readonly margin = config.apodMargin; // TODO move to a json file
+  private readonly margin = config.apodMargin;
 
   prevAPOD?: APOD = undefined;
   currAPOD?: APOD = undefined;
   nextAPOD?: APOD = undefined;
-  // prevAPOD?: APOD = PrevAPOD;
-  // currAPOD?: APOD = CurrAPOD;
-  // nextAPOD?: APOD = NextAPOD;
 
   @ViewChild('prevAPODEl', {static: false}) prevAPODEl!: ElementRef;
   @ViewChild('currAPODEl', {static: false}) currAPODEl!: ElementRef;
@@ -87,10 +84,8 @@ export class ApodsComponent implements OnInit {
   // is acceptable up to a limit/margin.
   updateCarouselPositions(width: number) {
     // All math is done in pixel units
-    // console.log('width='+width)
 
     if (!this.currAPOD) {
-      // console.log(this.currAPOD)
       return;
     }
 
@@ -99,23 +94,15 @@ export class ApodsComponent implements OnInit {
     const totalAvailSpace = width - currAPODEl_Width;
     const availSpaceOneSide = totalAvailSpace / 2;
 
-    // console.log('currAPODEl_Width='+currAPODEl_Width)
-// console.log('totalAvailSpace='+totalAvailSpace)
-// console.log('availSpaceOneSide='+availSpaceOneSide)
-
     // Calculate previous APOD position
     let prevAPOD75px = 0
     if (this.prevAPOD) {
       const prevAPODEl_Width = (this.prevAPODEl.nativeElement as HTMLElement)?.offsetWidth;
-      // console.log('prevAPODEl_Width='+prevAPODEl_Width)
 
       // Find the pixels to hide 75% of image
       prevAPOD75px = prevAPODEl_Width * 0.75;
-      // console.log('prevAPOD75px='+prevAPOD75px)
       // Then find the amount of margin between prev and curr APOD with 75% hidden
       const leftSideAvailSpace = availSpaceOneSide - (prevAPODEl_Width - prevAPOD75px);
-      // console.log('leftSideAvailSpace='+leftSideAvailSpace)
-      // console.log('availSpaceOneSide='+availSpaceOneSide)
 
       // If there is less space then the specified margin, then margin will be the allowed distance
       if (leftSideAvailSpace < this.margin) {
