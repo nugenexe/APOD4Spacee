@@ -1,5 +1,5 @@
 {
 	"apodMargin": 20,
 	"apodAPIDomain": "https://api.nasa.gov/planetary/apod",
-	"apodAPIKey": "85cRgXIFL80Aj0rm6sDSv3gmuiQwtfp5FciJmwdT"
+	"apodAPIKey": "DEMO_KEY"
 }
