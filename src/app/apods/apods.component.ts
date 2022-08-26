@@ -2,8 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Subject, debounceTime } from 'rxjs';
 import { APOD } from '../apod';
 import { APODService } from '../apod.service';
-import { ApodComponent } from '../apod/apod.component';
-import { CurrAPOD, NextAPOD, PrevAPOD } from '../mock-apods';
 import config from '../../../config.json' assert {type: 'json'}
 
 @Component({

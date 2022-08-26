@@ -1,5 +1,5 @@
 <div class="apods" (window:resize)="onResize($event)">
-	<div class="apod" id="prevAPOD" #prevAPODEl>
+	<div class="apod" #prevAPODEl>
 		<app-apod [apod]="prevAPOD"
 			(imageLoadedEvent)="imageLoaded()"
 			(imageClickedEvent)="imageClicked($event)"></app-apod>
@@ -11,7 +11,7 @@
 			(imageClickedEvent)="imageClicked($event)"
 		></app-apod>
 	</div>
-	<div class="apod" id="nextAPOD" #nextAPODEl>
+	<div class="apod" #nextAPODEl>
 		<app-apod [apod]="nextAPOD"
 			(imageLoadedEvent)="imageLoaded()"
 			(imageClickedEvent)="imageClicked($event)"></app-apod>

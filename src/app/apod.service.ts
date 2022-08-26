@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, of, Subscription } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { APOD, NASAAPOD } from './apod';
 import config from '../../config.json' assert {type: 'json'}
 
