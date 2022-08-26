@@ -1,0 +1,16 @@
+<div class="apod" *ngIf="apod">
+	<div class="date">
+		<div *ngIf="enableDatePicker; else displayDate">
+			<input [(ngModel)]="apod.date" type="date" (change)="dateChangeFN()">	
+		</div>
+		<ng-template #displayDate>
+			<span>{{apod.date}}</span>
+		</ng-template>
+	</div>
+
+	<img [src]="apod.url" #image [alt]="defaultMsg" style="max-width:100%" (load)="imageLoaded()" (click)="imageClicked()">
+	<div class="copyright" *ngIf="apod.copyright"><span>copyright: {{apod.copyright}}</span></div>
+	<div class="explanation" #explanation *ngIf="apod.explanation"><span>{{apod.explanation}}</span></div>
+</div>
+
+

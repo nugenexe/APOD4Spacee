@@ -1,0 +1,17 @@
+.apods {
+	/* border: 1px solid black; */
+	margin-top: 32px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	overflow-x: clip;
+}
+
+.apod {
+	position: absolute;
+	/* top: -10%; */
+}
+
+.curr-apod {
+	z-index: 9999;
+}

@@ -1,0 +1,28 @@
+.date {
+	display: flex;
+	padding-left: 1rem;
+	height: 40px;
+	align-items: center;
+
+	font-size: 20px;
+    font-weight: 600;
+    color: #5d5d5d;
+}
+
+.date input {
+	font-size: 20px;
+    font-weight: 600;
+    color: #5d5d5d;
+}
+
+
+.copyright {
+    margin-left: 10px;
+    color: #b5b5b5;
+    font-weight: 700;
+}
+
+.explanation {
+	font-size: 20px;
+    font-weight: 600;
+}
