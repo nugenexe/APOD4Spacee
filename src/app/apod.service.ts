@@ -14,12 +14,10 @@ export class APODService {
   getAPOD(date: string): Observable<APOD> {
     // TODO "caching" by implementing database save and check before making call
 
-    // TODO move url and api_key out
     let url = `${config.apodAPIDomain}?api_key=${config.apodAPIKey}&date=${date}`;
     return this.http.get<NASAAPOD>(url)
       .pipe(
         map((resp: NASAAPOD) => {
-          console.log(resp)
           let apod: APOD = {
             copyright: resp.copyright,
             date: resp.date,
@@ -27,7 +25,6 @@ export class APODService {
             mediaType: resp.media_type,
             url: resp.url
           };
-
 
           return apod;
         }),
