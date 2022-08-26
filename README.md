@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Node.js version 16 for using JSON imports.
 
 
-npm i
-ng build
-ng serve
+npm i  
+ng build  
+ng serve  
 
 Completed tasks 1, 2, and 3.
