@@ -8,7 +8,13 @@
 		</ng-template>
 	</div>
 
-	<img [src]="apod.url" #image [alt]="defaultMsg" style="max-width:100%" (load)="imageLoaded()" (click)="imageClicked()">
+	<div #media class="media">
+		<img [src]="apod.url" *ngIf="apod.mediaType === 'image'; else displayIFrame"
+			[alt]="defaultMsg" style="max-width:100%" (load)="mediaLoaded()" (click)="mediaClicked()">
+		<ng-template #displayIFrame>
+			<iframe [src]="safeResourceURL" *ngIf="apod.url" width="1280px" height="720px" (load)="mediaLoaded()" (click)="mediaClicked()"></iframe>
+		</ng-template>
+	</div>
 	<div class="copyright" *ngIf="apod.copyright"><span>copyright: {{apod.copyright}}</span></div>
 	<div class="explanation" #explanation *ngIf="apod.explanation"><span>{{apod.explanation}}</span></div>
 </div>

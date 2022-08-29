@@ -1,19 +1,19 @@
 <div class="apods" (window:resize)="onResize($event)">
 	<div class="apod" #prevAPODEl>
 		<app-apod [apod]="prevAPOD"
-			(imageLoadedEvent)="imageLoaded()"
-			(imageClickedEvent)="imageClicked($event)"></app-apod>
+			(mediaLoadedEvent)="mediaLoaded()"
+			(mediaClickedEvent)="mediaClicked($event)"></app-apod>
 	</div>
 	<div class="curr-apod" #currAPODEl>
 		<app-apod [enableDatePicker]="true" [apod]="currAPOD"
 			(dateChangeEvent)="dateChanged($event)"
-			(imageLoadedEvent)="imageLoaded()"
-			(imageClickedEvent)="imageClicked($event)"
+			(mediaLoadedEvent)="mediaLoaded()"
+			(mediaClickedEvent)="mediaClicked($event)"
 		></app-apod>
 	</div>
 	<div class="apod" #nextAPODEl>
 		<app-apod [apod]="nextAPOD"
-			(imageLoadedEvent)="imageLoaded()"
-			(imageClickedEvent)="imageClicked($event)"></app-apod>
+			(mediaLoadedEvent)="mediaLoaded()"
+			(mediaClickedEvent)="mediaClicked($event)"></app-apod>
 	</div>	
 </div>

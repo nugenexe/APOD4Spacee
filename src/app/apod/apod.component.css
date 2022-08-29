@@ -15,6 +15,9 @@
     color: #5d5d5d;
 }
 
+.media {
+    display: inline-block;
+}
 
 .copyright {
     margin-left: 10px;

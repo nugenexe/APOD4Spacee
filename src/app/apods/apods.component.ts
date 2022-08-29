@@ -63,11 +63,11 @@ export class ApodsComponent implements OnInit {
     this.updateAPODs(date);
   }
 
-  imageLoaded() {
+  mediaLoaded() {
     this.setCarouselPosition.next(window.outerWidth)
   }
 
-  imageClicked(date: string) {
+  mediaClicked(date: string) {
     this.updateAPODs(date);
   }
   
